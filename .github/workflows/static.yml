@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rehwears</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #000;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 4px;
+        }
+
+        .hero img {
+            width: 100%;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .product {
+            text-align: center;
+        }
+
+        .product img {
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .product img:hover {
+            transform: scale(1.05);
+        }
+
+        .product button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: 2px solid black;
+            background: transparent;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .product button:hover {
+            background: black;
+            color: white;
+        }
+
+        .order-section {
+            padding: 40px;
+            background: #f5f5f5;
+        }
+
+        .order-section h2 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 30px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, select, textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        button.submit-btn {
+            padding: 12px;
+            border: none;
+            background: black;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .success {
+            display: none;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .tick {
+            font-size: 80px;
+            color: green;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    REHWEARS
+</header>
+
+<div class="hero">
+    <img src="https://i.ibb.co/C5M1QRm1/image.png">
+</div>
+
+<section class="products">
+    <div class="product">
+        <img src="https://i.ibb.co/nNdcsbpS/image.png">
+        <button onclick="location.href='#order'">ORDER</button>
+    </div>
+
+    <div class="product">
+        <img src="https://i.ibb.co/tMQCrgJW/image.png">
+        <button onclick="location.href='#order'">ORDER</button>
+    </div>
+
+    <div class="product">
+        <img src="https://i.ibb.co/4nZHrXRM/image.png">
+        <button onclick="location.href='#order'">ORDER</button>
+    </div>
+
+    <div class="product">
+        <img src="https://i.ibb.co/wrBxpNsK/image.png">
+        <button onclick="location.href='#order'">ORDER</button>
+    </div>
+
+    <div class="product">
+        <img src="https://i.ibb.co/hFk9sp3B/image.png">
+        <button onclick="location.href='#order'">ORDER</button>
+    </div>
+
+    <div class="product">
+        <img src="https://i.ibb.co/svsytwZP/image.png">
+        <button onclick="location.href='#order'">ORDER</button>
+    </div>
+</section>
+
+<section class="order-section" id="order">
+    <h2>PLACE YOUR ORDER</h2>
+
+    <form onsubmit="showSuccess(); return false;">
+        <input type="text" placeholder="Full Name" required>
+        <input type="tel" placeholder="Mobile Number" required>
+        <input type="email" placeholder="Email Address" required>
+        <textarea placeholder="House Address" required></textarea>
+
+        <select required>
+            <option value="">Select Size</option>
+            <option>XS</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+        </select>
+
+        <input type="number" placeholder="Quantity" min="1" required>
+
+        <button type="submit" class="submit-btn">SUBMIT ORDER</button>
+    </form>
+</section>
+
+<div class="success" id="successMessage">
+    <div class="tick">✓</div>
+    <h2>Order Placed Successfully!</h2>
+    <p>You will receive a WhatsApp message shortly for confirmation.</p>
+</div>
+
+<footer>
+    © 2026 Rehwears. All rights reserved.
+</footer>
+
+<script>
+function showSuccess() {
+    document.querySelector(".order-section").style.display = "none";
+    document.getElementById("successMessage").style.display = "block";
+    window.scrollTo(0, document.body.scrollHeight);
+}
+</script>
+
+</body>
+</html>
